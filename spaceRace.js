@@ -17,16 +17,34 @@ canvas.height = window.innerHeight;
 //     c.strokeStyle = 'white';
 //     c.stroke();
 // }
+var circle = new circle(200, 200) 
+function circle() {
+    this.x = x;
+    
+    this.draw = function() { 
+        c.beginPath(); //circle function
+        c.arc(x, 200, 30, 0, Math.PI * 2, false);
+        c.strokeStyle = "white";
+        c.stroke();
+    }
+
+    this.update = function () {
+        if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {// this statements makes the circle move back and forth on the x axis
+             this.dx = -this.dx;
+
+    }
+}
+
+
+
 
 var x = 200;
-var y = 200;
 var dx = 5;
-var dy = 1;
 var radius = 30;
 function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
-  
+          circle.draw();
       c.beginPath(); //circle function
       c.arc(x, 200, 30, 0, Math.PI * 2, false);
       c.strokeStyle = "white";
